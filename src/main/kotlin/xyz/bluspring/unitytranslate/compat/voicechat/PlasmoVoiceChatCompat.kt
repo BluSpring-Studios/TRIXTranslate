@@ -8,7 +8,7 @@ import su.plo.voice.api.server.PlasmoVoiceServer
 
 @Addon(
     id = "pv-unitytranslate-compat",
-    name = "UnityTranslate",
+    name = "TRIXTranslate",
     version = "1.0.0",
     authors = [ "BluSpring" ]
 )

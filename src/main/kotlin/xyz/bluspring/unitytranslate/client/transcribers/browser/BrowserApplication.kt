@@ -23,7 +23,7 @@ object BrowserApplication {
 
             // Protection against translation keys
             if (translated.contains('<') || translated.contains('>')) {
-                UnityTranslate.logger.error("UnityTranslate has detected HTML tag characters in translation key $key! To protect your system, UnityTranslate has forcefully crashed the transcriber (and potentially the game) to avoid any malicious actors.")
+                UnityTranslate.logger.error("TRIXTranslate has detected HTML tag characters in translation key $key! To protect your system, TRIXTranslate has forcefully crashed the transcriber (and potentially the game) to avoid any malicious actors.")
                 UnityTranslate.logger.error("This may have occurred for one of the following reasons:")
                 UnityTranslate.logger.error(" - A server resource pack added a malicious translation for $key")
                 UnityTranslate.logger.error(" - Your currently applied resource pack contains a malicious translation for $key")
