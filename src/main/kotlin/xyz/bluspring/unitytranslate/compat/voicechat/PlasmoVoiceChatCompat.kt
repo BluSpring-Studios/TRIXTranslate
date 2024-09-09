@@ -10,7 +10,7 @@ import su.plo.voice.api.server.audio.capture.ProximityServerActivationHelper
 
 @Addon(
     id = "pv-unitytranslate-compat",
-    name = "UnityTranslate",
+    name = "TRIXTranslate",
     version = "1.0.0",
     authors = [ "BluSpring" ],
     scope = AddonLoaderScope.ANY

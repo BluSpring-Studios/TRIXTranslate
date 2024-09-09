@@ -26,7 +26,7 @@ object UnityTranslateClientCommands {
             it.source.`arch$sendSuccess`({
                 ComponentUtils.formatList(
                     listOf(
-                        Component.literal("UnityTranslate v${UnityTranslate.instance.proxy.modVersion}"),
+                        Component.literal("TRIXTranslate v${UnityTranslate.instance.proxy.modVersion}"),
                         Component.literal("- Enabled: ${UnityTranslate.config.client.enabled}"),
                         Component.literal("- Current transcriber: ${UnityTranslate.config.client.transcriber}"),
                         Component.literal("- Spoken language: ${UnityTranslate.config.client.language}"),

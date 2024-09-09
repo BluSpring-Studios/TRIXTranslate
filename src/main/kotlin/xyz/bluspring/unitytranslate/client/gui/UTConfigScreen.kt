@@ -22,7 +22,7 @@ import kotlin.reflect.KVisibility
 import kotlin.reflect.full.declaredMembers
 import kotlin.reflect.full.findAnnotation
 
-class UTConfigScreen(private val parent: Screen?) : Screen(Component.literal("UnityTranslate")) {
+class UTConfigScreen(private val parent: Screen?) : Screen(Component.literal("TRIXTranslate")) {
     companion object {
         //#if MC >= 1.20.2
         //$$ val ARROW_UP = UnityTranslate.id("arrow_up")

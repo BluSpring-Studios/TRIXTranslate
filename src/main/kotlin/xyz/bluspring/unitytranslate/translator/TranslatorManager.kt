@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentLinkedQueue
 import java.util.concurrent.ForkJoinPool
 
 object TranslatorManager {
-    private var timer: Timer = Timer("UnityTranslate Batch Translate Manager")
+    private var timer: Timer = Timer("TRIXTranslate Batch Translate Manager")
     internal val queuedTranslations = ConcurrentLinkedQueue<Translation>()
 
     private val MULTI_ASTERISK_REGEX = Regex("\\*+")
@@ -316,7 +316,7 @@ object TranslatorManager {
         val list = mutableListOf<LibreTranslateInstance>()
 
         timer.cancel()
-        timer = Timer("UnityTranslate Batch Translate Manager")
+        timer = Timer("TRIXTranslate Batch Translate Manager")
         
         translationPool.shutdownNow()
         translationPool = ForkJoinPool((Runtime.getRuntime().availableProcessors() - 3).coerceAtLeast(1))
@@ -392,7 +392,7 @@ object TranslatorManager {
 
         instances = ConcurrentLinkedDeque(list)
 
-        UnityTranslate.logger.info("UnityTranslate translation config successfully loaded!")
+        UnityTranslate.logger.info("TRIXTranslate translation config successfully loaded!")
     }
 
     //#if MC <= 1.20.4

@@ -2,8 +2,8 @@
     "schemaVersion": 1,
     "id": "unitytranslate",
     "version": "${mod_version}",
-    "name": "UnityTranslate",
-    "description": "A mod designed for free live translation, inspired by the QSMP. Mainly created for the Unity Multiplayer server, and for public release towards the multilingual Minecraft community.",
+    "name": "TRIXTranslate",
+    "description": "A mod designed for free live translation, inspired by the QSMP. Mainly created for the Unity Multiplayer server, and for public release towards the multilingual Minecraft community. Modified for usage by TRIX Studios.",
     "authors": [
         "BluSpring"
     ],

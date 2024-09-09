@@ -6,12 +6,12 @@ issueTrackerURL="https://github.com/BluSpring/UnityTranslate/issues"
 [[mods]]
     modId="unitytranslate"
     version="${mod_version}"
-    displayName="UnityTranslate"
+    displayName="TRIXTranslate"
     logoFile="icon.png"
     credits="Thanks to Argos Open Tech for creating LibreTranslate, without it this mod would not have been possible."
-    authors="BluSpring"
+    authors="BluSpring, GgRd"
     description='''
-    A mod designed for free live translation, inspired by the QSMP. Mainly created for the Unity Multiplayer server, and for public release towards the multilingual Minecraft community.
+    A mod designed for free live translation, inspired by the QSMP. Mainly created for the Unity Multiplayer server, and for public release towards the multilingual Minecraft community. Modified for usage by TRIX Studios.
     '''
 
 [[dependencies.unitytranslate]]

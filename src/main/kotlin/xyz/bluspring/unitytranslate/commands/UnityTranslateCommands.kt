@@ -11,7 +11,7 @@ object UnityTranslateCommands {
     val INFO = Commands.literal("info")
         .executes { ctx ->
             ctx.source.sendSystemMessage(ComponentUtils.formatList(listOf(
-                Component.literal("UnityTranslate v${UnityTranslate.instance.proxy.modVersion}"),
+                Component.literal("TRIXTranslate v${UnityTranslate.instance.proxy.modVersion}"),
                 Component.literal("- Total instances loaded: ${TranslatorManager.instances.size}"),
                 Component.literal("- Queued translations: ${TranslatorManager.queuedTranslations.size}"),
                 Component.empty(),

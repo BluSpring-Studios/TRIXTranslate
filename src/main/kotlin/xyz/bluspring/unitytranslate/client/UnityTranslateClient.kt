@@ -196,13 +196,13 @@ class UnityTranslateClient {
                 return UnityTranslate.config.client.transcriptBoxes
             }
 
-        val CONFIGURE_BOXES = (KeyMapping("unitytranslate.configure_boxes", -1, "UnityTranslate"))
-        val TOGGLE_TRANSCRIPTION = (KeyMapping("unitytranslate.toggle_transcription", -1, "UnityTranslate"))
-        val TOGGLE_BOXES = (KeyMapping("unitytranslate.toggle_boxes", -1, "UnityTranslate"))
-        val SET_SPOKEN_LANGUAGE = (KeyMapping("unitytranslate.set_spoken_language", -1, "UnityTranslate"))
-        val CLEAR_TRANSCRIPTS = (KeyMapping("unitytranslate.clear_transcripts", -1, "UnityTranslate"))
-        //val TRANSLATE_SIGN = (KeyMapping("unitytranslate.translate_sign", InputConstants.KEY_F8, "UnityTranslate"))
-        val OPEN_CONFIG_GUI = (KeyMapping("unitytranslate.open_config", InputConstants.KEY_F7, "UnityTranslate"))
+        val CONFIGURE_BOXES = (KeyMapping("unitytranslate.configure_boxes", -1, "TRIXTranslate"))
+        val TOGGLE_TRANSCRIPTION = (KeyMapping("unitytranslate.toggle_transcription", -1, "TRIXTranslate"))
+        val TOGGLE_BOXES = (KeyMapping("unitytranslate.toggle_boxes", -1, "TRIXTranslate"))
+        val SET_SPOKEN_LANGUAGE = (KeyMapping("unitytranslate.set_spoken_language", -1, "TRIXTranslate"))
+        val CLEAR_TRANSCRIPTS = (KeyMapping("unitytranslate.clear_transcripts", -1, "TRIXTranslate"))
+        //val TRANSLATE_SIGN = (KeyMapping("unitytranslate.translate_sign", InputConstants.KEY_F8, "TRIXTranslate"))
+        val OPEN_CONFIG_GUI = (KeyMapping("unitytranslate.open_config", InputConstants.KEY_F7, "TRIXTranslate"))
 
         @JvmStatic
         fun registerKeys() {
@@ -219,7 +219,7 @@ class UnityTranslateClient {
 
         fun displayMessage(component: Component, isError: Boolean = false) {
             val full = Component.empty()
-                .append(Component.literal("[UnityTranslate]: ")
+                .append(Component.literal("[TRIXTranslate]: ")
                     .withStyle(if (isError) ChatFormatting.RED else ChatFormatting.YELLOW, ChatFormatting.BOLD)
                 )
                 .append(component)
@@ -231,7 +231,7 @@ class UnityTranslateClient {
             val version = UnityTranslate.instance.proxy.modVersion
             val font = Minecraft.getInstance().font
 
-            guiGraphics.drawString(font, "UnityTranslate v$version", 2, Minecraft.getInstance().window.guiScaledHeight - (font.lineHeight * 2) - 4, 0xAAAAAA)
+            guiGraphics.drawString(font, "TRIXTranslate v$version", 2, Minecraft.getInstance().window.guiScaledHeight - (font.lineHeight * 2) - 4, 0xAAAAAA)
             guiGraphics.drawString(font, Component.translatable("unitytranslate.credit.author"), 2, Minecraft.getInstance().window.guiScaledHeight - font.lineHeight - 2, 0xAAAAAA)
         }
 
