@@ -1,6 +1,6 @@
 <img src="src/main/resources/icon.png" width="128">
 
-# UnityTranslate
+# TRIXTranslate
 
 [Modrinth](https://modrinth.com/mod/unitytranslate) · [CurseForge](https://curseforge.com/minecraft/mc-mods/unitytranslate) · [Discord](https://discord.gg/ECGejX4WFA) · [Support the Developer!](https://ko-fi.com/bluspring) 
 
