@@ -2,11 +2,11 @@
 
 # TRIXTranslate
 
-[Modrinth](https://modrinth.com/mod/unitytranslate) · [CurseForge](https://curseforge.com/minecraft/mc-mods/unitytranslate) · [Discord](https://discord.gg/ECGejX4WFA) · [Support the Developer!](https://ko-fi.com/bluspring) 
+[Modrinth](https://modrinth.com/mod/unitytranslate) · [CurseForge](https://curseforge.com/minecraft/mc-mods/unitytranslate) · [Support the Developer!](https://ko-fi.com/bluspring) 
 
 A Minecraft mod designed for free live translation, inspired by the QSMP.
 
-Created primarily for the [Unity Multiplayer](https://twitter.com/UnityUpdatesEN) server, and released publicly for the multilingual Minecraft community.
+Created primarily for the Unity Multiplayer server, and released publicly for the multilingual Minecraft community.
 
 ### Installation
 Official releases of UnityTranslate can be downloaded from the official [Modrinth](https://modrinth.com/mod/unitytranslate) and [CurseForge](https://curseforge.com/minecraft/mc-mods/unitytranslate) pages.<br>
