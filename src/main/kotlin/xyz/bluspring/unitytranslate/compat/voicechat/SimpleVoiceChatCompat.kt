@@ -1,13 +1,17 @@
 package xyz.bluspring.unitytranslate.compat.voicechat
 
 import de.maxhenkel.voicechat.api.ForgeVoicechatPlugin
+import de.maxhenkel.voicechat.api.Group
+import de.maxhenkel.voicechat.api.VoicechatClientApi
 import de.maxhenkel.voicechat.api.VoicechatPlugin
 import de.maxhenkel.voicechat.api.VoicechatServerApi
+import de.maxhenkel.voicechat.api.events.ClientVoicechatInitializationEvent
 import de.maxhenkel.voicechat.api.events.EventRegistration
 import de.maxhenkel.voicechat.api.events.MicrophoneMuteEvent
 import de.maxhenkel.voicechat.api.events.VoicechatDisableEvent
 import de.maxhenkel.voicechat.api.events.VoicechatServerStartedEvent
 import net.minecraft.server.level.ServerPlayer
+import net.minecraft.world.entity.player.Player
 import xyz.bluspring.unitytranslate.UnityTranslate
 import xyz.bluspring.unitytranslate.client.UnityTranslateClient
 
@@ -41,10 +45,15 @@ class SimpleVoiceChatCompat : VoicechatPlugin {
         registration.registerEvent(VoicechatServerStartedEvent::class.java) {
             voiceChatServer = it.voicechat
         }
+
+        registration.registerEvent(ClientVoicechatInitializationEvent::class.java) {
+            voiceChatClient = it.voicechat
+        }
     }
 
     companion object {
         lateinit var voiceChatServer: VoicechatServerApi
+        lateinit var voiceChatClient: VoicechatClientApi
 
         fun getNearbyPlayers(source: ServerPlayer): List<ServerPlayer> {
             if (isPlayerDeafened(source))
@@ -53,7 +62,7 @@ class SimpleVoiceChatCompat : VoicechatPlugin {
             return source.serverLevel().getPlayers {
                 (!isPlayerDeafened(it) &&
                         ((it.distanceToSqr(source) <= voiceChatServer.voiceChatDistance * voiceChatServer.voiceChatDistance && UTVoiceChatCompat.areBothSpectator(source, it)) ||
-                                playerSharesGroup(it, source))
+                                playerSharesGroup(source, it))
                         )
                         || it == source
             }
@@ -61,9 +70,19 @@ class SimpleVoiceChatCompat : VoicechatPlugin {
 
         fun playerSharesGroup(player: ServerPlayer, other: ServerPlayer): Boolean {
             val firstGroup = voiceChatServer.getConnectionOf(player.uuid)?.group ?: return false
+            if (firstGroup.type == Group.Type.OPEN)
+                return true
+
             val secondGroup = voiceChatServer.getConnectionOf(other.uuid)?.group ?: return false
+            if (secondGroup.type == Group.Type.ISOLATED && firstGroup.id != secondGroup.id)
+                return false
 
             return firstGroup.id == secondGroup.id
+        }
+
+        fun isPlayerAudible(player: Player): Boolean {
+            // FIXME: SVC doesn't provide an easy way of detecting this...
+            return true
         }
 
         fun isPlayerDeafened(player: ServerPlayer): Boolean {
