@@ -32,5 +32,5 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: UnityTranslate Artifacts
-          path: build/versions/UnityTranslate-*.jar
+          name: TRIXTranslate Artifacts
+          path: build/versions/TRIXTranslate-*.jar
