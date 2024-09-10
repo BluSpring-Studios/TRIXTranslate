@@ -5,6 +5,7 @@ package xyz.bluspring.unitytranslate.neoforge
 //#if FORGE
 //$$ import net.minecraftforge.api.distmarker.Dist
 //$$ import net.minecraftforge.api.distmarker.OnlyIn
+//$$ import net.minecraftforge.common.MinecraftForge
 //$$ import net.minecraftforge.client.event.RegisterKeyMappingsEvent
 //$$ import net.minecraftforge.eventbus.api.SubscribeEvent
 //$$ import net.minecraftforge.fml.ModLoadingContext
@@ -19,8 +20,6 @@ package xyz.bluspring.unitytranslate.neoforge
 //$$ import net.neoforged.fml.ModLoadingContext
 //$$ import net.neoforged.fml.common.Mod
 //$$ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
-
-//$$ import net.neoforged.neoforge.server.permission.events.PermissionGatherEvent
 //$$ import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent
 //#endif
 
@@ -40,6 +39,7 @@ package xyz.bluspring.unitytranslate.neoforge
 //#else
 //$$         FMLJavaModLoadingContext.get().modEventBus.register(this)
 //#endif
+//$$         NeoForgeEvents.init()
 //$$     }
 //$$
 //$$     @OnlyIn(Dist.CLIENT)
@@ -48,10 +48,6 @@ package xyz.bluspring.unitytranslate.neoforge
 //$$         UnityTranslateClient()
 //$$
 //$$         ConfigScreenHelper.createConfigScreen()
-//$$     }
-//$$
-//$$     fun onPermissionsGather(event: PermissionGatherEvent.Nodes) {
-//$$         UnityTranslate.instance.proxy.registerPermissions(event)
 //$$     }
 //$$
 //$$     @OnlyIn(Dist.CLIENT)
